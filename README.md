@@ -3,4 +3,4 @@ Este repositório tem como objetivo, documentar de forma amigável e dinâmica a
 
 # Atividade 01 - Teste de GIF
 
-![Image](https://github.com/user-attachments/assets/ecfedb64-e988-4877-b13f-a98acdd5bb48)
+![hacked](gifs/hacked.gif)
