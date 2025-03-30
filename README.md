@@ -78,7 +78,7 @@ Foi obtida uma **autorização formal** do cliente para a realização do teste 
 
 ### 1. **Infraestrutura e Sistemas Presentes no Ambiente Alvo**
 
-A varredura realizada com **NMAP** foi executada no ambiente alvo, com base no relatório analisado. Foram identificados os seguintes elementos principais na infraestrutura:
+A varredura realizada com **NMAP** foi executada no ambiente alvo. Foram identificados os seguintes elementos principais na infraestrutura:
 
 - 🖥️ **Sistemas:** intra.net, importante.com e vulneravel.com  
 
@@ -94,7 +94,11 @@ A versão do Apache também foi analisada e, até o momento da elaboração dest
 
 ### 2. **Resultados da Verificação de Segurança**
 
-📊 **Obtivemos os seguintes resultados:**
+🎯 **Alvos:** `intra.net` e `vulneravel.com` 
+
+🔐 **Execução:** Enumeração, ataque de força bruta.  
+
+🛠️ **Ferramentas:** `ffuf`, `cewl`, `hydra`, `patator`
 
 Através do uso da ferramenta `ffuf`, foi possível realizar a enumeração de usuários presentes no sistema alvo.
 
@@ -105,6 +109,8 @@ A análise dos domínios `intra.net` e `vulneravel.com` resultou em achados seme
 **Esta etapa permitiu a identificação do usuário** **Paulo** no sistema.
 
 **Ao analisar o diretório** `http://intra.net/~Paulo`, foi possível obter informações sobre suas preferências em filmes e séries, no qual possibilitou a criação de listas de palavras personalizadas para ataques de força bruta, com o intuito de descobrir sua senha:
+
+Usamos as ferramentas  `cewl`, e `hydra`.
 
 ![](gifs/3-cewl-e-hydra.gif)
 
@@ -124,7 +130,7 @@ ________________________________________________________________________________
 
 🔐 **Execução:** Ataque de força bruta.  
 
-🛠️ **Ferramenta:** `patator`
+🛠️ **Ferramentas:** `exrex` e `patator`
 
 Este site utiliza o protocolo HTTP em vez de HTTPS, o que permite o tráfego de dados sem criptografia. Isso significa que, caso um atacante **use ferramentas de análise de tráfego, como o `Wireshark` ,`OWASP-ZAP`, `BurpSuite` **,  é possível **interceptar informações sensíveis** do sistema. No entanto, para o alvo em questão, utilizamos uma abordagem diferente:
 
