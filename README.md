@@ -97,6 +97,19 @@ A análise dos domínios `intra.net` e `vulneravel.com` resultou em achados seme
 
 ![](gifs/2-ffuf-intra-net.gif)
 
+**Esta etapa permitiu a identificação de usuários** (**Andreia**, **Paulo**, **aluno**) no sistema.
+
+**Ao analisar o diretório** `http://intra.net/~Paulo`, foi possível obter informações sobre suas preferências em filmes e séries, o que possibilitou a criação de listas de palavras personalizadas para ataques de força bruta, com o intuito de descobrir sua senha:
+
+![](gifs/3-cewl-e-hydra.gif)
+
+Após a execução da atividade acima, foi possível obter a senha do usuário Paulo.
+
+Em seguida, foi estabelecida uma conexão FTP com esse usuário, permitindo a obtenção de uma chave SSH privilegiada. Utilizando a técnica de `password spraying` combinada com `wordlists `personalizadas e a ferramenta `patator`, **foi possível acessar o sistema com um usuário de privilégios administrativos (*sysadmin*):**
+
+![](gifs/4-wordlist-e-patator.gif)
+
+asasas
 
 ### 3. **Análise das Principais Áreas de Risco**
 
