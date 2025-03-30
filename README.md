@@ -80,9 +80,10 @@ Foi obtida uma **autorização formal** do cliente para a realização do teste 
 
 A varredura realizada com **NMAP** foi executada no ambiente alvo, com base no relatório analisado. Foram identificados os seguintes elementos principais na infraestrutura:
 
-- **Sistemas**: intra.net, importante.com e vulneravel.com
+- 🖥️ **Sistemas:** intra.net, importante.com e vulneravel.com  
 
-- **Portas Abertas e Serviços**: O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (**por exemplo: 21, 22, 80**, entre outras):
+  🔓 **Portas Abertas e Serviços:** O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (**por exemplo: 21, 22, 80**, entre outras):
+
 
 ![](gifs/0-Reconhecimento-Geral.gif)
 
@@ -93,7 +94,7 @@ A versão do Apache também foi analisada e, até o momento da elaboração dest
 
 ### 2. **Resultados da Verificação de Segurança**
 
-**Obtivemos os seguintes resultados:**
+📊 **Obtivemos os seguintes resultados:**
 
 Através do uso da ferramenta `ffuf`, foi possível realizar a enumeração de usuários presentes no sistema alvo.
 
@@ -117,11 +118,15 @@ Em seguida, foi estabelecida uma conexão FTP com esse usuário, permitindo a ob
 
 Devido ao esquecimento ou armazenamento inadequado de um arquivo importante, como a chave privada, foi possível realizar a conexão como **sysadmin**. Caso esta falha seja explorada de forma mal-intencionada, pode resultar em **danos irreversíveis** aos sistemas em questão.
 
+_________________________________________________________________________________________________
 
+🎯 **Alvo:** `importante.com`  
 
-**Próximo alvo: **`importante.com`
+🔐 **Execução:** Ataque de força bruta.  
 
-Este site utiliza o protocolo HTTP em vez de HTTPS, o que permite o tráfego de dados sem criptografia. Isso significa que, caso um atacante **use ferramentas de análise de tráfego, como o `Wireshark`**, é possível **interceptar informações sensíveis** do sistema. No entanto, para o alvo em questão, utilizamos uma abordagem diferente:
+🛠️ **Ferramenta:** `patator`
+
+Este site utiliza o protocolo HTTP em vez de HTTPS, o que permite o tráfego de dados sem criptografia. Isso significa que, caso um atacante **use ferramentas de análise de tráfego, como o `Wireshark` ,`OWASP-ZAP`, `BurpSuite` **,  é possível **interceptar informações sensíveis** do sistema. No entanto, para o alvo em questão, utilizamos uma abordagem diferente:
 
 Recorremos à técnica de **`shoulder surfing`** (espreitar sobre o ombro) para identificar que o nome do usuário é `fred` e observar padrões de digitação no campo de senha.
 
@@ -129,10 +134,21 @@ Com base nos padrões observados, criamos uma lista personalizada utilizando exp
 
 ![](gifs/5-fred-e-patator.gif)
 
-Logado com sucesso:
+✅ **Logado com sucesso:**
 
 ![](gifs/6-logando-fred.gif)
 
+_________________________________________________________________________________________________
+
+🎯 **Alvo:** `vulneravel.com`  
+
+🔓 **Execução:** Quebra de hashes - senhas fracas.  
+
+🛠️ **Ferramenta:** `John The Ripper`
+
+Devido ao uso de senhas fracas e mecanismos de proteção inadequados, foi possível quebrar facilmente os hashes de senhas armazenadas em texto claro no sistema em questão:
+
+![](gifs/7-jonh-quebrando-hashes.gif)
 
 
 ### 3. **Análise das Principais Áreas de Risco**
