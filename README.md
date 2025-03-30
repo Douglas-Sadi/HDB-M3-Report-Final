@@ -81,7 +81,7 @@ A varredura realizada com **NMAP** foi executada no ambiente alvo, com base no r
 
 - **Portas Abertas e Serviços**: O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (por exemplo, 80 e 443):
 
-![](gifs\0-Reconhecimento-Geral.gif)
+![](gifs/0-Reconhecimento-Geral.gif)
 
 ### 2. **Resultados da Verificação de Segurança**
 
