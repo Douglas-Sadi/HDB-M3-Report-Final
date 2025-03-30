@@ -1,6 +1,8 @@
 # Hackers Do Bem - Módulo 3 - Atividade 5
 Este repositório tem como objetivo, documentar de forma dinâmica e amigável, a atividade 5 do módulo 3 (Red Team) - Escrita de relatório.
 
+⚠️ **O documento em questão destina-se exclusivamente a fins educacionais, executado em um ambiente controlado fornecido pela própria instituição de ensino.** ⚠️
+
 **OBS:** Para melhor proveito deste documento **(exibição das ações em formato .gif)**, acesse-o em:
 
 https://github.com/Douglas-Sadi/HDB-M3-Report-Final
