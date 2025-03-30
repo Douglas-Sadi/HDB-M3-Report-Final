@@ -69,9 +69,8 @@ Foi obtida uma **autorização formal** do cliente para a realização do teste 
 
 - Prazos e entregáveis.
 
-  
 
-## Atividade 1: Entender a Necessidade do Cliente
+## Entendendo a Necessidade do Cliente
 
 ### 1. **Infraestrutura e Sistemas Presentes no Ambiente Alvo**
 
@@ -79,9 +78,14 @@ A varredura realizada com **NMAP** foi executada no ambiente alvo, com base no r
 
 - **Sistemas**: intra.net, importante.com e vulneravel.com
 
-- **Portas Abertas e Serviços**: O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (por exemplo, 80 e 443):
+- **Portas Abertas e Serviços**: O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (**por exemplo: 21, 22, 80**, entre outras):
 
 ![](gifs/0-Reconhecimento-Geral.gif)
+
+A versão do Apache também foi analisada e, até o momento da elaboração deste relatório, não foram encontrados registros de vulnerabilidades no CVE:
+
+![](gifs/1-reconhecimento-nmap-intra-net.gif)
+
 
 ### 2. **Resultados da Verificação de Segurança**
 
