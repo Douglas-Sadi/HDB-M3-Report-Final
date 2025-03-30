@@ -1,11 +1,11 @@
 # Hackers Do Bem - Módulo 3 - Atividade 5
-⚠️ **O documento em questão destina-se exclusivamente a fins educacionais, executado em um ambiente controlado fornecido pela própria instituição de ensino.** ⚠️
+⚠️ **O documento em questão destina-se exclusivamente a fins educacionais.** ⚠️
 
-Este repositório tem como objetivo documentar, de forma dinâmica e acessível, a atividade 5 do módulo 3 (Red Team) – Escrita de Relatório.
+⚠️**Atividades executadas em um ambiente controlado fornecido pela própria instituição de ensino.** ⚠️
 
-**Observação:** Para uma melhor experiência ao visualizar este documento, incluindo a exibição das ações em formato **.gif**, acesse-o em:
+ℹ️ ***Informação:*** *Devido a um problema de processamento na ferramenta `peek`, alguns GIFs tiveram parte da execução "cortada".*
 
-https://github.com/Douglas-Sadi/HDB-M3-Report-Final
+**Observação:** Para uma melhor experiência ao visualizar este documento, incluindo a exibição das ações em formato **.gif**, acesse-o em: https://github.com/Douglas-Sadi/HDB-M3-Report-Final
 
 💡 **Dica:** Clique no ▶️ no canto superior direito de cada GIF para iniciar a reprodução. 🎥
 
@@ -101,19 +101,39 @@ A análise dos domínios `intra.net` e `vulneravel.com` resultou em achados seme
 
 ![](gifs/2-ffuf-intra-net.gif)
 
-**Esta etapa permitiu a identificação de usuários** (**Andreia**, **Paulo**, **aluno**) no sistema.
+**Esta etapa permitiu a identificação do usuário** **Paulo** no sistema.
 
-**Ao analisar o diretório** `http://intra.net/~Paulo`, foi possível obter informações sobre suas preferências em filmes e séries, o que possibilitou a criação de listas de palavras personalizadas para ataques de força bruta, com o intuito de descobrir sua senha:
+**Ao analisar o diretório** `http://intra.net/~Paulo`, foi possível obter informações sobre suas preferências em filmes e séries, no qual possibilitou a criação de listas de palavras personalizadas para ataques de força bruta, com o intuito de descobrir sua senha:
 
 ![](gifs/3-cewl-e-hydra.gif)
 
-Após a execução da atividade acima, foi possível obter a senha do usuário Paulo.
+Após a execução da atividade acima, foi possível obter a **senha do usuário Paulo.**
 
-Em seguida, foi estabelecida uma conexão FTP com esse usuário, permitindo a obtenção de uma chave SSH privilegiada. Utilizando a técnica de `password spraying` combinada com `wordlists `personalizadas e a ferramenta `patator`, **foi possível acessar o sistema com um usuário de privilégios administrativos (*sysadmin*):**
+Em seguida, foi estabelecida uma conexão FTP com esse usuário, permitindo a obtenção de uma chave SSH privilegiada esquecida no diretório. Utilizando a técnica de `password spraying` combinada com `wordlists `personalizadas e a ferramenta `patator`, **foi possível acessar o sistema com um usuário de privilégios administrativos (*sysadmin*):**
 
 ![](gifs/4-wordlist-e-patator.gif)
 
-asasas
+⚠️ **Falha Grave:** ⚠️
+
+Devido ao esquecimento ou armazenamento inadequado de um arquivo importante, como a chave privada, foi possível realizar a conexão como **sysadmin**. Caso esta falha seja explorada de forma mal-intencionada, pode resultar em **danos irreversíveis** aos sistemas em questão.
+
+
+
+**Próximo alvo: **`importante.com`
+
+Este site utiliza o protocolo HTTP em vez de HTTPS, o que permite o tráfego de dados sem criptografia. Isso significa que, caso um atacante **use ferramentas de análise de tráfego, como o `Wireshark`**, é possível **interceptar informações sensíveis** do sistema. No entanto, para o alvo em questão, utilizamos uma abordagem diferente:
+
+Recorremos à técnica de **`shoulder surfing`** (espreitar sobre o ombro) para identificar que o nome do usuário é `fred` e observar padrões de digitação no campo de senha.
+
+Com base nos padrões observados, criamos uma lista personalizada utilizando expressões regulares e a combinamos com a ferramenta **`patator`** para realizar um ataque de força bruta, obtendo a senha do mesmo:
+
+![](gifs/5-fred-e-patator.gif)
+
+Logado com sucesso:
+
+![](gifs/6-logando-fred.gif)
+
+
 
 ### 3. **Análise das Principais Áreas de Risco**
 
