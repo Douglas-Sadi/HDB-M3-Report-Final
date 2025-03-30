@@ -3,4 +3,4 @@ Este repositório tem como objetivo, documentar de forma amigável e dinâmica a
 
 # Atividade 01 - Teste de GIF
 
-![hacked](\gifs\hacked.gif)
+![hacked](gifs/hacked.gif)
