@@ -89,13 +89,14 @@ A versão do Apache também foi analisada e, até o momento da elaboração dest
 
 ### 2. **Resultados da Verificação de Segurança**
 
-As verificações de segurança realizadas com o OWASP ZAP resultaram em múltiplas vulnerabilidades, algumas classificadas como de **alto risco**:
+**Obtivemos os seguintes resultados:**
 
-- **Injeção SQL**: Detecção de duas vulnerabilidades críticas envolvendo injeção SQL, tanto no formulário de inscrição quanto em outras áreas do sistema (ex.: `newuser.php`, `infoartist.php`). 	
-- **Ausência de Tokens Anti-CSRF**: Quatro instâncias foram identificadas, o que expõe o sistema a falsificação de solicitações, explorando a confiança de sites em usuários.  
-- **Falta de Configuração de CSP (Content Security Policy)**: Setenta ocorrências detectadas onde a falta de CSP deixa os sistemas vulneráveis a ataques de **Cross-Site Scripting (XSS)**.  
-- **Ausência de Cabeçalho X-Frame-Options**: Cinquenta e duas instâncias foram identificadas, deixando o site vulnerável a ataques de clickjacking.  
-- **Exposição de informações do servidor**: Através de campos de cabeçalho HTTP como "X-Powered-By", foi revelado que os sistemas estão utilizando PHP, facilitando a identificação de potenciais vetores de ataque.  
+Através do uso da ferramenta `ffuf`, foi possível realizar a enumeração de usuários presentes no sistema alvo.
+
+A análise dos domínios `intra.net` e `vulneravel.com` resultou em achados semelhantes:
+
+![](gifs/2-ffuf-intra-net.gif)
+
 
 ### 3. **Análise das Principais Áreas de Risco**
 
