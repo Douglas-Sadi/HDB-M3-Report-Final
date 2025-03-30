@@ -3,7 +3,7 @@
 
 Este repositório tem como objetivo documentar, de forma dinâmica e acessível, a atividade 5 do módulo 3 (Red Team) – Escrita de Relatório.
 
-**OBS:** Para melhor proveito deste documento **(exibição das ações em formato .gif)**, acesse-o em:
+**Observação:** Para uma melhor experiência ao visualizar este documento, incluindo a exibição das ações em formato **.gif**, acesse-o em:
 
 https://github.com/Douglas-Sadi/HDB-M3-Report-Final
 
