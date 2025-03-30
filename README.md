@@ -1,44 +1,42 @@
 # HDB-Módulo-3-Report-Final
-Este repositório tem como objetivo, documentar de forma amigável e dinâmica a atividade do módulo 3 (Red Team) - Escrita de relatório
+Este repositório tem como objetivo, documentar de forma amigável e dinâmica a atividade do módulo 3 (Red Team) - Escrita de relatório.
+
+**OBS:** Para aproveitar melhor este relatório **(exibição das ações realizadas em formato .gif)**, acesse o mesmo em:
+
+https://github.com/Douglas-Sadi/HDB-M3-Report-Final
 
 ## Relatório de Pré-Engajamento - Teste de Penetração
 
 ### 1. Objetivo
-O objetivo deste teste de penetração é avaliar a segurança do **Laboratório de Segurança**, identificando vulnerabilidades nos sistemas e aplicativos presentes. O escopo do teste inclui:
+O objetivo deste teste de penetração é avaliar a segurança dos seguintes ambientes: **intra.net, importante.com e vulneravel.com**, identificando vulnerabilidades nos sistemas e serviços presentes. O escopo do teste inclui:
 
-- Avaliação da infraestrutura do laboratório;
+- Avaliação da infraestrutura;
 - Identificação de vulnerabilidades críticas;
 - Planejamento de estratégias de mitigação;
-- Garantia da segurança da informação.
 
 ### 2. Contexto
-O **Laboratório de Segurança** é um ambiente complexo que contém diversas aplicações web, servidores e redes configuradas para simular um ambiente empresarial real. As principais características incluem:
+O ambiente em questão contém aplicações web e serviços. As principais características incluem:
 
-- Servidores Linux e Windows;
-- Aplicações web em PHP e JavaScript;
-- Banco de dados MySQL e PostgreSQL;
-- Firewalls e sistemas de detecção de intrusão;
-- Segmentação de rede com VLANs.
+- Servidores Linux;
+- Aplicações web;
+- Serviços como **FTP** e **SSH**.
 
 ### 3. Tipo de Pentest
 Com base na complexidade dos sistemas, o tipo de pentest mais adequado é **caixa cinza**, permitindo testar vulnerabilidades com informações limitadas. As abordagens incluem:
 
-- Testes de intrusão na rede;
+- Testes de intrusão na rede e protocolos;
 - Análise de aplicações web;
 - Exploração de falhas conhecidas (CVE);
 - Testes de configuração em servidores.
 
 ### 4. Escopo
 #### Elementos incluídos:
-- Aplicações web internas e externas;
-- Servidores de banco de dados;
-- Firewalls e segmentação de rede;
-- Serviços expostos (HTTP, SSH, RDP, etc.).
+- Aplicações web internas;
+- Serviços expostos **(HTTP, SSH e FTP).**
 
 #### Elementos excluídos:
 - Sistemas de produção críticos;
 - Testes de DoS (negação de serviço);
-- Dados sensíveis dos usuários.
 
 ### 5. Comunicação com os Envolvidos
 Durante o pentest, serão adotadas as seguintes diretrizes de comunicação:
