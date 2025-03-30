@@ -7,6 +7,8 @@ Este repositório tem como objetivo documentar, de forma dinâmica e acessível,
 
 https://github.com/Douglas-Sadi/HDB-M3-Report-Final
 
+💡 **Dica:** Clique no ▶️ no canto superior direito de cada GIF para iniciar a reprodução. 🎥
+
 ## Relatório de Pré-Engajamento - Teste de Penetração
 
 ### 1. Objetivo
