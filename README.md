@@ -16,7 +16,7 @@ O objetivo deste teste de penetração é avaliar a segurança dos seguintes amb
 
 - Avaliação da infraestrutura;
 - Identificação de vulnerabilidades críticas;
-- Planejamento de estratégias de mitigação;
+- Planejamento de estratégias de mitigação.
 
 ### 2. Contexto
 O ambiente em questão contém aplicações web e serviços. As principais características incluem:
