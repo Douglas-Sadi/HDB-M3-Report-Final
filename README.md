@@ -1,7 +1,7 @@
-# HDB-Módulo-3-Report-Final
-Este repositório tem como objetivo, documentar de forma amigável e dinâmica a atividade do módulo 3 (Red Team) - Escrita de relatório.
+# Hackers Do Bem - Módulo 3 - Atividade 5
+Este repositório tem como objetivo, documentar de forma dinâmica e amigável, a atividade 5 do módulo 3 (Red Team) - Escrita de relatório.
 
-**OBS:** Para aproveitar melhor este relatório **(exibição das ações realizadas em formato .gif)**, acesse o mesmo em:
+**OBS:** Para melhor proveito deste documento **(exibição das ações em formato .gif)**, acesse-o em:
 
 https://github.com/Douglas-Sadi/HDB-M3-Report-Final
 
@@ -18,8 +18,8 @@ O objetivo deste teste de penetração é avaliar a segurança dos seguintes amb
 O ambiente em questão contém aplicações web e serviços. As principais características incluem:
 
 - Servidores Linux;
-- Aplicações web;
-- Serviços como **FTP** e **SSH**.
+- Aplicações Web;
+- Serviços como **FTP** ,**SSH** e **HTTP**.
 
 ### 3. Tipo de Pentest
 Com base na complexidade dos sistemas, o tipo de pentest mais adequado é **caixa cinza**, permitindo testar vulnerabilidades com informações limitadas. As abordagens incluem:
@@ -47,10 +47,10 @@ Durante o pentest, serão adotadas as seguintes diretrizes de comunicação:
 
 ### 6. Plano de Teste de Penetração
 #### Metodologia:
-1. **Coleta de informações**: varredura com ferramentas como **Nmap**, **SQLMap** e **OWASP ZAP**;
-2. **Mapeamento da infraestrutura**: identificação de portas abertas e serviços;
-3. **Análise de vulnerabilidades**: testes de injeção SQL, XSS e exploração de falhas conhecidas;
-4. **Execução de ataques controlados**;
+1. **Coleta de informações**: levantamento de informações com técnicas de **OSINT**;
+2. **Mapeamento da infraestrutura**: identificação de portas abertas e serviços (**Nmap**);
+3. **Análise de vulnerabilidades**;
+4. **Execução de ataques controlados**: ataques de força bruta, utilizando ferramentas, como: **FFUF**, **Hydra**, **Patator** e **John The Ripper;**
 5. **Documentação dos resultados e mitigação**.
 
 ### 7. Acordo de Não Divulgação (NDA)
@@ -73,12 +73,15 @@ Foi obtida uma **autorização formal** do cliente para a realização do teste 
 
 ## Atividade 1: Entender a Necessidade do Cliente
 
-### 1. **Infraestrutura e Sistemas Presentes no Laboratório de Segurança**
+### 1. **Infraestrutura e Sistemas Presentes no Ambiente Alvo**
 
-A varredura realizada com OWASP ZAP foi executada no ambiente do Laboratório de Segurança, com base no relatório analisado. Foram identificados os seguintes elementos principais na infraestrutura:
+A varredura realizada com **NMAP** foi executada no ambiente alvo, com base no relatório analisado. Foram identificados os seguintes elementos principais na infraestrutura:
 
-- **Site**: http://testphp.vulnweb.com
-- **Portas Abertas e Serviços**: O OWASP ZAP detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (por exemplo, 80 e 443), bem como APIs e outros endpoints acessíveis externamente.  
+- **Sistemas**: intra.net, importante.com e vulneravel.com
+
+- **Portas Abertas e Serviços**: O **NMAP** detectou diversos serviços e funcionalidades em operação nos servidores analisados, como servidores web rodando em portas tradicionais (por exemplo, 80 e 443):
+
+  ![0-Reconhecimento-Geral](/gifs/0-Reconhecimento-Geral.gif)
 
 ### 2. **Resultados da Verificação de Segurança**
 
