@@ -9,7 +9,7 @@
 
 💡 **Dica:** Clique no ▶️ no canto superior direito de cada GIF para iniciar a reprodução. 🎥
 
-## Relatório de Teste de Penetração - Sistemas WEB
+## Relatório: Teste de Penetração - Sistemas WEB
 
 ### 1. Objetivo
 O objetivo deste teste de penetração é avaliar a segurança dos seguintes ambientes: **intra.net, importante.com e vulneravel.com**, identificando vulnerabilidades nos sistemas e serviços presentes. O escopo do teste inclui:
