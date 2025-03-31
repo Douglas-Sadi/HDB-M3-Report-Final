@@ -1,7 +1,7 @@
 # Hackers Do Bem - Módulo 3 - Atividade 5
 ⚠️ **O documento em questão destina-se exclusivamente a fins educacionais.** ⚠️
 
-⚠️**Atividades executadas em um ambiente controlado fornecido pela própria instituição de ensino.** ⚠️
+⚠️**As atividades foram executadas em um ambiente controlado, fornecido pela própria instituição de ensino.** ⚠️
 
 ℹ️ ***Informação:*** *Devido a um problema de processamento na ferramenta `peek`, alguns GIFs tiveram parte da execução "cortada".*
 
@@ -46,7 +46,7 @@ Com base na complexidade dos sistemas, o tipo de pentest mais adequado é **caix
 Durante o pentest, serão adotadas as seguintes diretrizes de comunicação:
 
 - Relatórios periódicos enviados à equipe de segurança;
-- Reuniões de alinhamento com responsáveis do laboratório;
+- Reuniões de alinhamento com responsáveis;
 - Compartilhamento de documentação relevante.
 
 ### 6. Plano de Teste de Penetração
@@ -156,39 +156,39 @@ Devido ao uso de senhas fracas e mecanismos de proteção inadequados, foi poss�
 
 ![](gifs/7-jonh-quebrando-hashes.gif)
 
+- ### 3. **Análise das Principais Áreas de Risco**
 
-### 3. **Análise das Principais Áreas de Risco**
+  Com base no relatório, as áreas mais críticas são:
 
-Com base no relatório, as áreas mais críticas são:
+  - **Acesso não autorizado e senhas fracas**: A obtenção de senhas fracas e o acesso indevido aos sistemas foram os maiores riscos encontrados. Em **intra.net**, por exemplo, a senha de um usuário foi descoberta a partir de informações pessoais, e o acesso ao sistema com privilégios administrativos foi possível devido ao armazenamento inadequado de uma chave SSH.
+  - **Falta de criptografia de tráfego**: A utilização de **HTTP** em vez de **HTTPS** no site **importante.com** permitiu a interceptação de informações sensíveis por meio de ferramentas de análise de tráfego. Isso compromete a confidencialidade dos dados e os torna vulneráveis a ataques de espionagem.
+  - **Falhas em proteção contra ataques de força bruta**: Ferramentas como **Hydra** e **Patator** foram utilizadas para ataques de força bruta em sistemas que não implementaram medidas adequadas para limitar tentativas de login, expondo os sistemas a risco de comprometer contas de usuários.
+  - **Exposição de informações sensíveis**: A descoberta de informações sobre o usuário **Paulo** em **intra.net** e o subsequente uso dessas informações para personalizar ataques de força bruta são exemplos claros de como a falta de controle sobre dados sensíveis pode ser explorada para obter acesso indevido a sistemas.
 
-- **Injeções SQL**: Classificadas como **críticas**, essas vulnerabilidades podem comprometer totalmente a integridade e confidencialidade dos dados.  
-- **Falta de Proteções Anti-CSRF**: Embora de risco médio, essa falha pode levar a ações não autorizadas em nome dos usuários, comprometendo a integridade e controle dos sistemas.  
-- **Falta de Cabeçalhos de Segurança (CSP e X-Frame-Options)**: A falta dessas proteções compromete tanto a confidencialidade quanto a integridade dos dados e pode ser explorada por atacantes para injetar código malicioso ou realizar ataques de clickjacking.  
+- ### 4. **Impacto Potencial de Cada Vulnerabilidade**
 
-### 4. **Impacto Potencial de Cada Vulnerabilidade**
+  - **Confidencialidade**: O uso inadequado de senhas e a falta de criptografia de tráfego podem expor informações sensíveis, comprometendo a privacidade dos dados. Em particular, o acesso não autorizado a sistemas como o **intra.net** e a interceptação de tráfego em **importante.com** podem revelar credenciais e outros dados privados.
+  - **Integridade**: A falta de proteções adequadas contra ataques de força bruta e a exposição de informações sobre usuários, como ocorreu em **intra.net**, permitem que atacantes alterem dados sem autorização. Além disso, a ausência de criptografia adequada e a falta de validações de entrada podem resultar na manipulação de informações críticas.
+  - **Disponibilidade**: A exploração de falhas de segurança, como a descoberta de senhas e chaves SSH, pode permitir ataques que sobrecarreguem recursos ou resultem em interrupções de serviço. Falhas como essas podem ser usadas para manipulação de dados ou até mesmo ataques de negação de serviço, se mal-intencionadas.
 
-- **Confidencialidade**: A injeção SQL pode expor dados sensíveis do banco de dados, afetando a privacidade e segurança de informações.  
-- **Integridade**: Vulnerabilidades como injeções SQL e falta de tokens CSRF podem permitir que atacantes alterem dados sem autorização.  
-- **Disponibilidade**: Embora o relatório não mencione diretamente riscos à disponibilidade, injeções e falhas em XSS podem ser usadas para denegar serviços através de manipulação de dados ou sobrecarga de recursos.  
+- ### 5. **Definição do Tipo de Pentest Mais Adequado**
 
-### 5. **Definição do Tipo de Pentest Mais Adequado**
+  - **Pentest de Aplicações Web**: Foco em vulnerabilidades web, como senhas fracas e falta de criptografia HTTP, sendo essencial para avaliar falhas de segurança em aplicações web.
+  - **Teste de Intrusão de Rede**: Avalia a segurança da infraestrutura, considerando serviços como FTP e SSH, além de identificar portas abertas e serviços vulneráveis.
+  - **Recursos e Tempo**: Com recursos limitados, priorize as vulnerabilidades críticas, como senhas fracas e falta de proteção. Para uma análise mais completa, inclua testes de rede e configurações de servidores.
 
-- **Pentest de Aplicações Web**: Devido ao foco nas vulnerabilidades de segurança web (injeção SQL, falhas de CSP, CSRF e clickjacking), recomenda-se um pentest focado em **aplicações web**.  
-- **Teste de Intrusão de Rede**: Adicionalmente, considerando a possibilidade de serviços web rodando em múltiplos servidores, um teste de intrusão de rede pode avaliar a segurança do ambiente de infraestrutura.  
-- **Recursos e Tempo**: Se os recursos e tempo forem limitados, o foco deve estar nas vulnerabilidades críticas (injeções SQL e falta de proteção CSRF). Para uma análise mais completa, deve-se incluir testes mais amplos de rede e configuração de servidores.  
+- ### 6. **Escopo e Considerações Adicionais**
 
-### 6. **Escopo e Considerações Adicionais**
+  - **Infraestrutura**: O escopo deve incluir todos os serviços expostos como **HTTP, FTP e SSH**, além de considerar a segurança das aplicações web, servidores e configurações associadas aos sistemas **intra.net**, **importante.com** e **vulneravel.com**.
+  - **Ferramentas e Técnicas**: O uso de ferramentas como **Nmap**, **FFUF**, **Hydra**, **Patator**, **CEWL** e **John The Ripper** é fundamental para realizar a análise de vulnerabilidades e ataques controlados, conforme as falhas identificadas nos serviços e sistemas analisados
 
-- **Infraestrutura**: Como o Laboratório de Segurança inclui serviços web, APIs e sistemas interativos, o escopo deve abranger todas as interfaces expostas.  
-- **Referências e Melhores Práticas**: O uso de padrões como o **OWASP Testing Guide** e frameworks como o **MITRE ATT&CK** ajudaria a garantir a cobertura de potenciais vetores de ataque.  
+## Definição de Escopo
 
-## Atividade 2: Definição de Escopo
-
-### Documento de Escopo para o Teste de Penetração no Laboratório de Segurança
+### Documento de Escopo para o Teste de Penetração
 
 #### 1. **Introdução**
 
-Este documento define o escopo do teste de penetração a ser realizado no Laboratório de Segurança, com base nos resultados da varredura de vulnerabilidades conduzida utilizando o OWASP ZAP. O objetivo é garantir que o teste cubra as áreas mais críticas e relevantes, concentrando-se nas vulnerabilidades de alto risco identificadas anteriormente.
+Com base nos resultados, identificamos os seguintes sistemas e serviços que farão parte do escopo do teste de penetração.
 
 #### 2. **Sistemas, Aplicativos e Redes no Escopo**
 
@@ -196,109 +196,65 @@ A seguir, estão os elementos que farão parte do escopo do teste de penetraçã
 
 #### 2.1. **Sistemas Web**
 
-##### Sistema 1: Site Web Principal (testphp.vulnweb.com)
+### **Sistemas e Infraestruturas Mapeadas**
 
-| Atributo                        | Detalhes                                                     |
-| ------------------------------- | ------------------------------------------------------------ |
-| **Versão de Software**          | PHP 5.6.40-38+ubuntu20.04.1                                  |
-| **Serviços em Execução**        | Apache 2 com suporte a PHP                                   |
-| **Principais Vulnerabilidades** | - Injeção SQL (alta criticidade)   - Falta de cabeçalho Content Security Policy (CSP)   - Falta de proteção Anti-CSRF   - Exposição de informações através do cabeçalho "X-Powered-By" |
+| Sistema           | Serviços                                        | Criticidade |
+|------------------|-----------------------------------------------|-------------|
+| **intra.net**    | SSH (porta 22), HTTP (porta 80), FTP (porta 21) | Alta (contém informações internas sensíveis) |
+| **importante.com** | SSH (porta 22), HTTP (porta 80), FTP (porta 21) | Média (site corporativo com informações sigilosas) |
+| **vulneravel.com** | SSH (porta 22), HTTP (porta 80), FTP (porta 21) | Alta (armazenamento de credenciais e dados confidenciais) |
 
-##### Sistema 2: API Pública (API AJAX)
-
-| Atributo                        | Detalhes                                                     |
-| ------------------------------- | ------------------------------------------------------------ |
-| **Versão de Software**          | PHP 5.6.40-38+ubuntu20.04.1                                  |
-| **Serviços em Execução**        | API servindo funcionalidades de recuperação de dados (`infoartist.php`, `infocateg.php`) |
-| **Principais Vulnerabilidades** | - Injeção SQL (alta criticidade)   - Exposição de informações de versão via cabeçalho "X-Powered-By" |
-
-##### Sistema 3: Serviço de Autenticação (Serviço de Login)
-
-| Atributo                        | Detalhes                                                     |
-| ------------------------------- | ------------------------------------------------------------ |
-| **Serviços em Execução**        | Interface de login para autenticação de usuários (`newuser.php`, `login.php`) |
-| **Principais Vulnerabilidades** | - Injeção SQL no formulário de login   - Falta de tokens Anti-CSRF em formulários |
 
 #### 3. **Exclusões do Escopo**
 
-Os seguintes sistemas e áreas estão **fora do escopo** do teste de penetração, seja por razões de infraestrutura crítica ou por não serem considerados prioritários para este teste:
-
-- **Servidores de Banco de Dados Internos**: O teste de penetração não incluirá ataques diretos aos servidores de banco de dados, apenas será verificada a proteção contra injeções SQL via aplicativos web.  
-- **Sistemas de Back-End**: Componentes de back-end que não possuem interfaces web diretamente acessíveis estão fora do escopo.  
-- **Servidores de Arquivos ou Storage**: Não será realizada a análise ou exploração de servidores de arquivos no escopo atual.  
-- **Dispositivos de Segurança Física (Câmeras, Controles de Acesso)**: Elementos relacionados à segurança física não serão alvo de pentest.  
+- Os seguintes elementos **estão fora do escopo** do teste de penetração:
+  - Redes de terceiros ou provedores externos;
+  - Servidores de backup e infraestruturas redundantes;
+  - Sistemas que contenham informações regulamentadas por compliance restritivo.
 
 #### 4. **Áreas Críticas**
 
-As áreas mais críticas identificadas incluem:
+- O escopo **priorizou**:
+  - Sistemas com credenciais expostas ou falhas de autenticação;
+  - Ambientes que utilizam comunicações não criptografadas (HTTP em vez de HTTPS);
+  - Servidores que apresentaram vulnerabilidades na varredura inicial.
 
-- **Injeção SQL** nos sistemas web e APIs, pois podem comprometer a integridade e confidencialidade de dados.  
-- **Ausência de tokens Anti-CSRF** em formulários de login e submissão, o que pode expor o sistema a falsificação de solicitações.  
-- **Falta de políticas de segurança como CSP e X-Frame-Options**, o que aumenta o risco de ataques XSS e clickjacking.  
+## Documentação
 
-#### 5. **Metodologia e Abordagem**
-
-O teste de penetração será conduzido utilizando metodologias baseadas no **OWASP Testing Guide** e no **MITRE ATT&CK**, com foco em ataques comuns a aplicações web e APIs, como:
-
-- Injeções SQL  
-- Cross-Site Scripting (XSS)  
-- Testes de autenticação e controle de acesso  
-- Testes de exposição de informações sensíveis
-
-## Atividade 3: Documentação
-
-### Plano de Teste de Penetração para o Laboratório de Segurança
+### Plano de Teste de Penetração
 
 #### 1. **Objetivos do Pentest**
 
-O teste de penetração visa identificar vulnerabilidades de segurança, explorar falhas presentes nos sistemas e aplicativos do Laboratório de Segurança, e avaliar a resistência do ambiente em relação a possíveis ataques. Os objetivos específicos incluem:
-
-- **Identificar vulnerabilidades** em sistemas web e APIs, com foco em falhas de alto impacto como injeções SQL e falta de proteção CSRF.  
-- **Avaliar a configuração de segurança** de servidores e sistemas, garantindo que boas práticas estejam sendo seguidas (ex.: políticas CSP, X-Frame-Options).  
-- **Explorar falhas de segurança** para verificar o potencial de comprometimento dos dados e serviços.  
-- **Fornecer recomendações** para mitigar as vulnerabilidades encontradas, visando melhorar a segurança dos sistemas.  
+- Identificar e explorar vulnerabilidades existentes;
+- Avaliar a eficácia das políticas de segurança implementadas;
+- Testar a resistência do ambiente contra ataques reais;
+- Fornecer recomendações para mitigação de riscos identificados. 
 
 #### 2. **Etapas e Metodologias**
 
-O plano de teste de penetração será conduzido utilizando a metodologia **OWASP Testing Guide**, com suporte no framework **MITRE ATT&CK**. 
-
-As etapas incluem:
-
-##### 2.1. **Reconhecimento**
-
-- Identificação de informações sobre o ambiente, como endereços IP, serviços em execução e portas abertas, utilizando ferramentas como Nmap e OWASP ZAP.  
-
-##### 2.2. **Varredura de Vulnerabilidades**
-
-- Utilização do OWASP ZAP para varreduras automáticas e análise de vulnerabilidades em sistemas web e APIs.  
-- Verificação manual de vulnerabilidades como injeções SQL, Cross-Site Scripting (XSS), falta de tokens Anti-CSRF, entre outras. 	
-
-##### 2.3. **Exploração**
-
-- Exploração das vulnerabilidades encontradas para verificar a profundidade das falhas, como tentativa de injeção de comandos SQL, manipulação de sessões, e ataques CSRF.  
-- Ferramentas: OWASP ZAP, Burp Suite, SQLMap, entre outras.  
-
-##### 2.4. **Relatório de Vulnerabilidades**
-
-- Documentação das vulnerabilidades encontradas, incluindo a descrição detalhada, impacto, métodos de exploração e recomendações de mitigação.  
+- **Coleta de informações** (Reconhecimento Ativo e Passivo).
+- **Enumeração e varredura** (Identificação de serviços e vulnerabilidades).
+- **Exploração** (Testes de exploração e privação de segurança).
+- **Escalação de privilégios** (Tentativa de acesso administrativo).
+- **Relatório final e recomendações**.
 
 #### 3. **Modelo de Documentos**
 
 ##### 3.1. **Relatório de Teste**
 
-- **Título**: Relatório de Teste de Penetração no Laboratório de Segurança  
-- **Data**: (Início e término do teste)  
+- **Título**: Relatório de Teste de Penetração.
+- **Data**: (Início e término do teste).
 - **Resumo Executivo**: Breve descrição do teste, objetivos e principais resultados.  
 - **Vulnerabilidades Encontradas**: Listagem das vulnerabilidades identificadas, classificadas por risco (crítico, alto, médio, baixo), com recomendações de mitigação.  
 - **Impacto Potencial**: Explicação dos possíveis danos que a exploração das vulnerabilidades pode causar, como perda de dados, controle de sistemas ou indisponibilidade de serviços.  
-- **Ferramentas Utilizadas**: Listagem das ferramentas (OWASP ZAP, Burp Suite, Nmap) e técnicas aplicadas.  
+- **Ferramentas Utilizadas**: Listagem das ferramentas e técnicas aplicadas.  
 - **Conclusões e Recomendações**: Sumário das ações necessárias para melhorar a segurança do ambiente.  
 
 ##### 3.2. **Registro de Atividades**
 
-- **Data e Hora**: Registro detalhado de todas as ações realizadas, desde o reconhecimento até a exploração.  
-- **Ação Executada**: Descrição da etapa realizada (ex.: varredura com OWASP ZAP, exploração de injeção SQL).  
-- **Ferramentas Utilizadas**: Indicação da ferramenta ou técnica aplicada em cada atividade.  
+- **Data e Hora**: Registro detalhado de todas as ações realizadas, desde o reconhecimento até a exploração;
+- **Ação Executada**: Descrição da etapa realizada;
+- **Ferramentas Utilizadas**: Indicação da ferramenta ou técnica aplicada em cada atividade;
 - **Resultado Obtido**: Resultado da ação (ex.: vulnerabilidade encontrada, falha explorada, falha corrigida).  
 
 ##### 3.3. **Evidências de Vulnerabilidades**
@@ -306,27 +262,7 @@ As etapas incluem:
 - Capturas de tela dos resultados de testes e explorações.  
 - Logs e relatórios gerados por ferramentas, incluindo provas de conceito de vulnerabilidades exploradas.  
 
-#### 4. **Documentação de Vulnerabilidades**
-
-Todas as vulnerabilidades identificadas devem ser documentadas de forma clara e objetiva. Cada vulnerabilidade incluirá:
-
-- **Descrição**: O que é a vulnerabilidade e como foi identificada.  
-- **Impacto Potencial**: O que pode ocorrer se a vulnerabilidade for explorada.  
-- **Recomendações**: Medidas sugeridas para correção (ex.: uso de prepared statements, implementação de tokens CSRF).  
-- **Referências**: Links para guias de melhores práticas, como o OWASP Cheat Sheets.  
-
-#### 5. **Integração dos Resultados da Varredura de Vulnerabilidades**
-
-Os resultados da varredura de vulnerabilidades realizada com o OWASP ZAP, detalhados anteriormente, serão integrados ao plano de teste, com destaque para:
-
-- Injeções SQL  
-- Falta de políticas de segurança CSP  
-- Ausência de tokens Anti-CSRF  
-- Exposição de informações sensíveis em cabeçalhos HTTP  
-
-Cada uma dessas vulnerabilidades será detalhada no relatório, e seu impacto será discutido no contexto dos sistemas do Laboratório de Segurança.
-
-#### 6. **Desafios Enfrentados**
+#### 4. **Desafios Enfrentados**
 
 Qualquer obstáculo ou dificuldade encontrada durante o teste será documentado, como:
 
@@ -334,51 +270,30 @@ Qualquer obstáculo ou dificuldade encontrada durante o teste será documentado,
 - Limitações de tempo ou recursos disponíveis.  
 - Detecção de mecanismos de defesa ou mitigação já implementados.  
 
-#### 7. **Contrato Formal**
+#### 5. **Contrato Formal**
 
 O contrato formal de pentest incluirá as seguintes cláusulas:
 
 - **Confidencialidade**: Garantir que todas as informações obtidas durante o pentest sejam tratadas de forma confidencial.  
-- **Propriedade Intelectual**: Especificar que os resultados e relatórios gerados pertencem ao Laboratório de Segurança.  
+- **Propriedade Intelectual**: Especificar que os resultados e relatórios gerados pertencem ao ambiente em questão.
 - **Limitações de Responsabilidade**: Definir que o teste será realizado de forma controlada e que eventuais falhas exploradas serão informadas ao cliente, sem causar danos irreparáveis aos sistemas.  
 
-## Atividade 4: Linhas de Comunicação com os Envolvidos
+## Linhas de Comunicação com os Envolvidos
 
-### Plano de Comunicação e Colaboração – Teste de Penetração no Laboratório de Segurança
+### Plano de Comunicação e Colaboração – Teste de Penetração
 
 #### 1. **Relatório Resumido de Vulnerabilidades**
 
-O relatório resumido destina-se à equipe técnica e aos responsáveis pelo Laboratório de Segurança e destaca as principais vulnerabilidades identificadas durante a varredura de segurança, incluindo:
-
-### 1.1. Vulnerabilidades Críticas
-
-| **Vulnerabilidade**                              | **Descrição**                                                                                         | **Impacto**                                                                                         | **Recomendação**                                                                           |
-|--------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| **Injeção SQL (Alta Prioridade)**                | Foi identificada a possibilidade de injeção SQL em vários pontos, permitindo manipulação do banco de dados e exposição de dados sensíveis. | Compromete a integridade, confidencialidade e controle total sobre o banco de dados.              | Implementação imediata de prepared statements e sanitização de entradas de usuários.        |
-| **Ausência de Tokens Anti-CSRF (Prioridade Média)** | Formulários sem tokens de verificação CSRF foram detectados, expondo o sistema a ataques que realizam ações em nome do usuário. | Pode permitir a execução de ações não autorizadas.                                                  | Implementar tokens Anti-CSRF e validar nas solicitações.                                  |
-
-### 1.2. Configurações de Segurança Ausentes
-
-| **Vulnerabilidade**                           | **Descrição**                                                                                         | **Impacto**                                                                                         | **Recomendação**                                                                           |
-|-----------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| **Falta de Content Security Policy (CSP)**    | Não há política de segurança para controlar scripts e conteúdos externos.                             | Facilita ataques de Cross-Site Scripting (XSS) e a injeção de scripts maliciosos.                   | Configurar uma política CSP restritiva no servidor.                                        |
-| **Falta de X-Frame-Options**                  | A ausência deste cabeçalho permite ataques de clickjacking.                                           | Pode permitir que o conteúdo do site seja embutido em outros sites, resultando em ataques de clickjacking. | Incluir cabeçalho X-Frame-Options com a diretiva `SAMEORIGIN` ou `DENY`.                   |
-
-### 1.3. Exposição de Informações
-
-| **Vulnerabilidade**                            | **Descrição**                                                                                         | **Recomendação**                                                                                   |
-|------------------------------------------------|-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| **Cabeçalho "X-Powered-By"**                   | O servidor revela informações sobre a tecnologia utilizada (PHP), o que pode ser explorado por invasores. | Remover ou mascarar o cabeçalho "X-Powered-By" para minimizar a exposição de tecnologia.          |
-
+O relatório resumido destina-se à equipe técnica e aos responsáveis pelo ambiente testado e destaca as principais vulnerabilidades identificadas durante a varredura de segurança.
 
 #### 2. **Reunião de Apresentação dos Resultados**
 
-Para apresentar e discutir os resultados da varredura de vulnerabilidades, será agendada uma reunião com a equipe do Laboratório de Segurança e os responsáveis pelo projeto. O objetivo é garantir que todos os envolvidos entendam as vulnerabilidades encontradas, as etapas subsequentes e as recomendações.
+Para apresentar e discutir os resultados da varredura de vulnerabilidades, será agendada uma reunião com a equipe dos ambientes testados e os responsáveis pelo projeto. O objetivo é garantir que todos os envolvidos entendam as vulnerabilidades encontradas, as etapas subsequentes e as recomendações.
 
 ##### **Agenda da Reunião**:
 
 - **Introdução**: Resumo do objetivo do pentest e da varredura de vulnerabilidades.  
-- **Apresentação dos Resultados**: Discussão dos pontos críticos do relatório, incluindo injeção SQL, falta de tokens Anti-CSRF e cabeçalhos de segurança.  
+- **Apresentação dos Resultados**: Discussão dos pontos críticos do relatório.
 - **Próximas Etapas**: Definição das fases subsequentes do pentest e prazos.  
 - **Discussão Aberta**: Esclarecimento de dúvidas e alinhamento de expectativas.  
 
@@ -403,7 +318,7 @@ Serão estabelecidos canais de comunicação eficientes, como:
 Será elaborada a contribuição para o contrato formal, em conjunto com o departamento legal e o (a) gerente de projetos. O contrato deverá abordar:
 
 - **Escopo do Pentest**: Definir as áreas e sistemas que serão testados, conforme o escopo detalhado na atividade anterior.  
-- **Responsabilidades**: Estabelecer as responsabilidades da equipe de pentest e dos envolvidos no Laboratório de Segurança.  
+- **Responsabilidades**: Estabelecer as responsabilidades da equipe de pentest e dos envolvidos.  
 - **Prazos e Entregáveis**: Definir o cronograma das atividades e os relatórios a serem entregues.  
 - **Limitações de Responsabilidade**: Especificar as limitações e responsabilidades em caso de falhas exploradas ou incidentes durante o teste.  
 - **Propriedade Intelectual**: Garantir que todos os relatórios e resultados gerados durante o pentest sejam de propriedade do cliente.  
@@ -412,7 +327,7 @@ Será elaborada a contribuição para o contrato formal, em conjunto com o depar
 
 A equipe colaborará com a **elaboração do NDA** para garantir a proteção adequada das informações confidenciais. O NDA deverá incluir:
 
-- **Informações Sensíveis e Críticas**: Identificar as informações que devem ser protegidas, como detalhes sobre a infraestrutura do Laboratório de Segurança, relatórios de vulnerabilidades e resultados do pentest. 	
+- **Informações Sensíveis e Críticas**: Identificar as informações que devem ser protegidas, como detalhes sobre a infraestrutura, relatórios de vulnerabilidades e resultados do pentest. 	
 - **Obrigações de Confidencialidade**: Definir que todas as informações obtidas durante o pentest são confidenciais e não podem ser compartilhadas ou divulgadas sem autorização.  
 - **Penalidades por Violação**: Incluir cláusulas claras sobre as consequências e penalidades em caso de quebra de confidencialidade.  
 
@@ -420,13 +335,13 @@ A equipe colaborará com a **elaboração do NDA** para garantir a proteção ad
 
 Após a elaboração do contrato formal e do NDA, será feita uma revisão minuciosa para garantir que todas as necessidades e requisitos específicos do pentest estejam contemplados, e que as obrigações de confidencialidade sejam claras e compreensíveis.
 
-## Atividade 5: Autorização
+## Autorização
 
 ### Procedimentos para Obtenção de Autorização Formal para o Teste de Penetração
 
 #### 1. Submissão da Documentação Completa
 
-A documentação completa e detalhada sobre o teste de penetração no Laboratório de Segurança será submetida ao cliente para obter a autorização formal para prosseguir com as atividades. Os documentos enviados incluirão:
+A documentação completa e detalhada sobre o teste de penetração será submetida ao cliente para obter a autorização formal para prosseguir com as atividades. Os documentos enviados incluirão:
 
 - **Plano de Teste de Penetração**: O escopo, objetivos, metodologia e etapas detalhadas do pentest.
 - **Relatório Resumido de Vulnerabilidades**: Destacando as principais vulnerabilidades encontradas durante a varredura inicial e as ações recomendadas.
@@ -443,7 +358,7 @@ Certifique-se de que todas as partes envolvidas assinem o Acordo de Não Divulga
 
 #### 3. Requisitos Legais e Regulamentares
 
-Antes de iniciar o pentest, é essencial verificar e garantir que todas as normas legais e regulatórias específicas aplicáveis ao setor e ao ambiente do Laboratório de Segurança sejam seguidas.
+Antes de iniciar o pentest, é essencial verificar e garantir que todas as normas legais e regulatórias específicas aplicáveis ao setor e ao ambiente sejam seguidas.
 
 - **Passos**:
     - **Análise de conformidade regulatória**: Verificar se há requisitos específicos, como normas de proteção de dados (ex.: LGPD, GDPR) ou padrões de segurança (ex.: PCI-DSS, ISO/IEC 27001).
